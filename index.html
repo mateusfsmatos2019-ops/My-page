@@ -6,100 +6,256 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mateus Matos | Developer</title>
   <style>
-    body {
+    * {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #0f172a, #1e293b);
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
       color: #f1f5f9;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      text-align: center;
+      min-height: 100vh;
+      padding: 20px;
     }
 
     .container {
-      max-width: 600px;
+      max-width: 700px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+    }
+
+    .profile-header {
+      margin-bottom: 40px;
     }
 
     .foto-perfil {
-      width: 140px;
-      height: 140px;
+      width: 160px;
+      height: 160px;
       object-fit: cover;
       border-radius: 50%;
-      border: 3px solid #38bdf8;
-      margin-bottom: 18px;
+      border: 4px solid #38bdf8;
+      margin-bottom: 25px;
       display: block;
       margin-left: auto;
       margin-right: auto;
+      box-shadow: 0 0 30px rgba(56, 189, 248, 0.3);
+      transition: transform 0.3s ease;
     }
 
-    h2 {
-      font-weight: normal;
+    .foto-perfil:hover {
+      transform: scale(1.05);
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 8px;
+      color: #f1f5f9;
+      font-weight: 700;
+    }
+
+    .subtitle {
+      font-size: 1.1em;
       color: #94a3b8;
       margin-bottom: 30px;
+      letter-spacing: 0.5px;
     }
 
-    p {
+    .skills {
+      background: rgba(30, 41, 59, 0.8);
+      padding: 20px;
+      border-radius: 12px;
+      margin-bottom: 30px;
+      border: 1px solid rgba(56, 189, 248, 0.2);
+    }
+
+    .skills h3 {
+      color: #38bdf8;
+      margin-bottom: 12px;
+      font-size: 0.9em;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+    }
+
+    .skill-tag {
+      background: linear-gradient(135deg, #0ea5e9 0%, #38bdf8 100%);
+      color: white;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.85em;
+      font-weight: 500;
+    }
+
+    .contact-info {
+      background: rgba(30, 41, 59, 0.8);
+      padding: 20px;
+      border-radius: 12px;
+      margin-bottom: 30px;
+      border: 1px solid rgba(56, 189, 248, 0.2);
+    }
+
+    .contact-info p {
       margin: 8px 0;
+      font-size: 0.95em;
+    }
+
+    .contact-info strong {
+      color: #38bdf8;
+    }
+
+    .links {
+      margin-bottom: 25px;
     }
 
     .links a {
-      display: block;
-      margin: 10px 0;
+      display: inline-block;
+      margin: 8px 10px;
       color: #38bdf8;
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 600;
+      padding: 8px 16px;
+      border: 2px solid #38bdf8;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .links a:hover {
+      background-color: #38bdf8;
+      color: #0f172a;
     }
 
     .whatsapp {
       display: inline-block;
       margin-top: 20px;
-      padding: 12px 20px;
-      background-color: #25D366;
+      padding: 14px 28px;
+      background: linear-gradient(135deg, #25D366 0%, #20ba58 100%);
       color: white;
       text-decoration: none;
       border-radius: 8px;
       font-weight: bold;
-      transition: 0.3s;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
     }
 
     .whatsapp:hover {
-      background-color: #1ebe5d;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
     }
 
     .divider {
       margin: 30px 0;
       border-top: 1px solid #334155;
+      opacity: 0.5;
+    }
+
+    .about {
+      color: #cbd5e1;
+      line-height: 1.6;
+      margin-bottom: 30px;
+    }
+
+    .about p {
+      margin: 10px 0;
+    }
+
+    .status {
+      display: inline-block;
+      padding: 8px 14px;
+      background: rgba(34, 197, 94, 0.2);
+      border: 1px solid #22c55e;
+      border-radius: 20px;
+      color: #22c55e;
+      font-size: 0.85em;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 1.8em;
+      }
+
+      .subtitle {
+        font-size: 0.95em;
+      }
+
+      .foto-perfil {
+        width: 120px;
+        height: 120px;
+      }
+
+      .skill-tags {
+        gap: 6px;
+      }
+
+      .skill-tag {
+        padding: 5px 12px;
+        font-size: 0.8em;
+      }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <img src="Images/perfil.png.png" alt="Mateus Matos smiling in a professional portrait with a blue gradient background" class="foto-perfil">
-    <h1>Mateus Matos</h1>
-    <h2>Desenvolvedor de Software | Software Developer</h2>
+    <div class="profile-header">
+      <img src="Images/perfil.png.png" alt="Mateus Matos - Desenvolvedor de Software" class="foto-perfil">
+      <h1>Mateus Matos</h1>
+      <p class="subtitle">Desenvolvedor de Software | Software Developer</p>
+      <span class="status">🚀 Iniciante | Estudando Ativamente</span>
+    </div>
 
-    <p><strong>Contato / Contact:</strong></p>
-    <p>Email: mateusfsmatos2019@gmail.com</p>
+    <div class="about">
+      <p>
+        Desenvolvedor focado em criar soluções modernas, simples e eficientes.
+      </p>
+      <p>
+        Developer focused on building modern, simple and efficient solutions.
+      </p>
+    </div>
+
+    <div class="skills">
+      <h3>Habilidades / Skills</h3>
+      <div class="skill-tags">
+        <span class="skill-tag">HTML5</span>
+        <span class="skill-tag">CSS3</span>
+        <span class="skill-tag">JavaScript</span>
+        <span class="skill-tag">Git</span>
+        <span class="skill-tag">GitHub</span>
+      </div>
+    </div>
+
+    <div class="contact-info">
+      <p><strong>📧 Email</strong></p>
+      <p>mateusfsmatos2019@gmail.com</p>
+    </div>
 
     <div class="links">
-      <a href="https://instagram.com/mateusfsmatos" target="_blank">
-        Instagram: @mateusfsmatos
-      </a>
+      <a href="https://instagram.com/mateusfsmatos" target="_blank">Instagram</a>
+      <a href="https://github.com/mateusfsmatos2019-ops" target="_blank">GitHub</a>
+      <a href="https://linkedin.com" target="_blank">LinkedIn</a>
     </div>
 
     <a class="whatsapp" href="https://wa.me/5571992258950" target="_blank">
-      Fale comigo no WhatsApp / Contact me on WhatsApp
+      💬 Fale comigo no WhatsApp
     </a>
 
     <div class="divider"></div>
 
-    <p>
-      Desenvolvedor focado em criar soluções modernas, simples e eficientes.
-    </p>
-    <p>
-      Developer focused on building modern, simple and efficient solutions.
+    <p style="font-size: 0.85em; color: #64748b;">
+      © 2026 Mateus Matos | Desenvolvedor em Formação
     </p>
   </div>
 </body>
