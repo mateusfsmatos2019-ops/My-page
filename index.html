@@ -38,8 +38,8 @@
     }
 
     .foto-perfil {
-      width: 200px;
-      height: 200px;
+      width: 240px;
+      height: 240px;
       object-fit: cover;
       border-radius: 50%;
       border: 6px solid #38bdf8;
@@ -47,12 +47,13 @@
       display: block;
       margin-left: auto;
       margin-right: auto;
-      box-shadow: 0 0 50px rgba(56, 189, 248, 0.6);
-      transition: transform 0.3s ease;
+      box-shadow: 0 0 60px rgba(56, 189, 248, 0.7);
+      transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+      cursor: pointer;
     }
 
     .foto-perfil:hover {
-      transform: scale(1.1);
+      transform: scale(1.15) rotate(360deg);
     }
 
     h1 {
@@ -287,8 +288,8 @@
       }
 
       .foto-perfil {
-        width: 160px;
-        height: 160px;
+        width: 180px;
+        height: 180px;
         margin-bottom: 20px;
       }
 
