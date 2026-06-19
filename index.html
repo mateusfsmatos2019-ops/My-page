@@ -83,6 +83,77 @@
       font-weight: 500;
     }
 
+    .status {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 12px 20px;
+      background: rgba(34, 197, 94, 0.3);
+      border: 2.5px solid #22c55e;
+      border-radius: 25px;
+      color: #22c55e;
+      font-size: 1.15em;
+      font-weight: 700;
+      margin-bottom: 25px;
+    }
+
+    .rabbit-animation {
+      position: relative;
+      width: 40px;
+      height: 40px;
+      display: inline-block;
+    }
+
+    .rabbit {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      font-size: 30px;
+      line-height: 30px;
+      animation: rabbitHop 3s infinite;
+    }
+
+    .hole {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 35px;
+      height: 8px;
+      background: radial-gradient(ellipse at center, rgba(0,0,0,0.4), rgba(0,0,0,0.1));
+      border-radius: 50%;
+      box-shadow: inset 0 2px 4px rgba(0,0,0,0.5);
+    }
+
+    @keyframes rabbitHop {
+      0% {
+        bottom: 8px;
+        opacity: 1;
+        transform: translateX(-50%) scaleY(1);
+      }
+      25% {
+        bottom: 20px;
+        opacity: 1;
+        transform: translateX(-50%) scaleY(0.95);
+      }
+      50% {
+        bottom: 8px;
+        opacity: 1;
+        transform: translateX(-50%) scaleY(1);
+      }
+      75% {
+        bottom: 0px;
+        opacity: 0.5;
+        transform: translateX(-50%) scaleY(0.8);
+      }
+      100% {
+        bottom: -10px;
+        opacity: 0;
+        transform: translateX(-50%) scaleY(0.6);
+      }
+    }
+
     .skills {
       background: rgba(30, 41, 59, 0.85);
       padding: 30px;
@@ -200,18 +271,6 @@
       font-size: 1.25em;
       text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
       font-weight: 500;
-    }
-
-    .status {
-      display: inline-block;
-      padding: 12px 20px;
-      background: rgba(34, 197, 94, 0.3);
-      border: 2.5px solid #22c55e;
-      border-radius: 25px;
-      color: #22c55e;
-      font-size: 1.15em;
-      font-weight: 700;
-      margin-bottom: 25px;
     }
 
     .projects {
@@ -337,7 +396,13 @@
       <img src="Images/perfil.png.png" alt="Mateus Matos - Desenvolvedor de Software" class="foto-perfil">
       <h1>Mateus Matos</h1>
       <p class="subtitle">Desenvolvedor de Software | Software Developer</p>
-      <span class="status">🚀 Iniciante | Estudando Ativamente</span>
+      <span class="status">
+        🚀 Iniciante | Estudando Ativamente
+        <div class="rabbit-animation">
+          <div class="rabbit">🐰</div>
+          <div class="hole"></div>
+        </div>
+      </span>
     </div>
 
     <div class="about">
